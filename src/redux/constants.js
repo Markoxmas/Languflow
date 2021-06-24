@@ -1,1 +1,9 @@
-module.exports = {};
+const ADD_LIST_PENDING = "LIST_ADD_PENDING";
+const ADD_LIST_SUCCESS = "LIST_ADD_SUCCESS";
+const ADD_LIST_FAILED = "LIST_ADD_FAILED";
+
+module.exports = {
+  ADD_LIST_PENDING,
+  ADD_LIST_SUCCESS,
+  ADD_LIST_FAILED,
+};
