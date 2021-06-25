@@ -39,7 +39,7 @@ export const onEditList = (list) => (dispatch) => {
     );
 };
 
-export const onDeleteList = () => (dispatch) => {
+export const onDeleteList = (list) => (dispatch) => {
   dispatch({ type: CONST.DELETE_LIST_PENDING });
   axios
     .delete(`http://localhost:3001/lists/${list.id}`, list)
