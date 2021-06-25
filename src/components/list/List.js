@@ -1,10 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { onLoadTableLexemes } from "../../redux/actions/lexemeTableActions";
 
 const useStyles = makeStyles({
   root: {
@@ -22,7 +24,7 @@ const useStyles = makeStyles({
 
 export default function List({ list }) {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  const dispatch = useDispatch();
 
   return (
     <Card className={classes.root}>
@@ -45,7 +47,12 @@ export default function List({ list }) {
         </Typography>
       </CardContent>
       <CardActions className={classes.buttons}>
-        <Button size="small">Details</Button>
+        <Button
+          onClick={() => dispatch(onLoadTableLexemes(list.lexemes))}
+          size="small"
+        >
+          Details
+        </Button>
         <Button size="small">Edit</Button>
         <Button size="small">Delete</Button>
       </CardActions>
