@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { onLoadTableLexemes } from "../../redux/actions/lexemeTableActions";
+import { onInitEditList, onDeleteList } from "../../redux/actions/listActions";
 
 const useStyles = makeStyles({
   root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
     margin: "5px",
     textAlign: "center",
   },
-  title: {
+  language: {
     fontSize: 14,
   },
   buttons: {
@@ -30,7 +31,7 @@ export default function List({ list }) {
     <Card className={classes.root}>
       <CardContent>
         <Typography
-          className={classes.title}
+          className={classes.language}
           color="textSecondary"
           gutterBottom
         >
@@ -53,8 +54,12 @@ export default function List({ list }) {
         >
           Details
         </Button>
-        <Button size="small">Edit</Button>
-        <Button size="small">Delete</Button>
+        <Button size="small" onClick={() => dispatch(onInitEditList(list))}>
+          Edit
+        </Button>
+        <Button size="small" onClick={() => dispatch(onDeleteList(list))}>
+          Delete
+        </Button>
       </CardActions>
     </Card>
   );

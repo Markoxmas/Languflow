@@ -1,6 +1,25 @@
 import CONST from "../constants";
 import axios from "axios";
 
+export const onLoadLists = () => (dispatch) => {
+  dispatch({ type: CONST.LOAD_LIST_PENDING });
+  axios
+    .get("http://localhost:3001/lists")
+    .then((response) =>
+      dispatch({
+        type: CONST.LOAD_LIST_SUCCESS,
+        lists: response.data,
+        success: "Lists were loaded successfully!",
+      })
+    )
+    .catch((error) =>
+      dispatch({
+        type: CONST.LOAD_LIST_FAILED,
+        error: "Something went wrong while loading lists!",
+      })
+    );
+};
+
 export const onAddList = (list) => (dispatch) => {
   dispatch({ type: CONST.ADD_LIST_PENDING });
   axios
@@ -43,13 +62,14 @@ export const onDeleteList = (list) => (dispatch) => {
   dispatch({ type: CONST.DELETE_LIST_PENDING });
   axios
     .delete(`http://localhost:3001/lists/${list.id}`, list)
-    .then((response) =>
+    .then((response) => {
+      console.log("response", response);
       dispatch({
         type: CONST.DELETE_LIST_SUCCESS,
-        list: response.data,
+        list,
         success: "List was successfully deleted!",
-      })
-    )
+      });
+    })
     .catch((error) =>
       dispatch({
         type: CONST.DELETE_LIST_FAILED,
@@ -57,3 +77,13 @@ export const onDeleteList = (list) => (dispatch) => {
       })
     );
 };
+
+export const onInitAddList = (initialList) => ({
+  type: CONST.INIT_ADD_LIST,
+  initialList,
+});
+
+export const onInitEditList = (list) => ({
+  type: CONST.INIT_EDIT_LIST,
+  list,
+});

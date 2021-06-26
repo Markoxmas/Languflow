@@ -4,6 +4,8 @@ const initialState = [];
 
 const listsReducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case CONST.LOAD_LIST_SUCCESS:
+      return [...action.lists];
     case CONST.ADD_LIST_SUCCESS:
       return [...state, action.list];
     case CONST.EDIT_LIST_SUCCESS:
