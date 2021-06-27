@@ -4,10 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import List from "./List";
 import AddListButton from "./AddListButton";
 import ListEdit from "./ListEdit";
-import { onInitAddList } from "../../redux/actions/listActions";
-import createList from "../../lib/createList";
-
-import Button from "@material-ui/core/Button";
 
 export default function Collection() {
   const lists = useSelector((state) => state.listsReducer);

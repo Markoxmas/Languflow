@@ -48,10 +48,7 @@ export default function List({ list }) {
         </Typography>
       </CardContent>
       <CardActions className={classes.buttons}>
-        <Button
-          onClick={() => dispatch(onLoadTableLexemes(list.lexemes))}
-          size="small"
-        >
+        <Button onClick={() => dispatch(onLoadTableLexemes(list))} size="small">
           Details
         </Button>
         <Button size="small" onClick={() => dispatch(onInitEditList(list))}>

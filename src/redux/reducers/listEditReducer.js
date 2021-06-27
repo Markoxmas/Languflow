@@ -48,8 +48,7 @@ const listEditReducer = (state = initialState, action = {}) => {
         editing: true,
         adding: false,
       };
-    case CONST.UPDATE_INPUT_VALUE:
-      console.log("action", action);
+    case CONST.UPDATE_LIST_INPUT_VALUE:
       return {
         ...state,
         list: { ...state.list, [action.label]: action.value },

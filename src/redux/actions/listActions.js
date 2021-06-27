@@ -63,7 +63,6 @@ export const onDeleteList = (list) => (dispatch) => {
   axios
     .delete(`http://localhost:3001/lists/${list.id}`, list)
     .then((response) => {
-      console.log("response", response);
       dispatch({
         type: CONST.DELETE_LIST_SUCCESS,
         list,

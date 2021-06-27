@@ -42,7 +42,7 @@ export default function ListEdit() {
             name="title"
             className={classes.input}
             value={list.title}
-            onChange={(event) => dispatch(onInputChange(event))}
+            onChange={(event) => dispatch(onInputChange("list", event))}
           />
         </Typography>
         <Typography variant="body2" component="p">
@@ -54,7 +54,7 @@ export default function ListEdit() {
             name="description"
             className={classes.input}
             value={list.description}
-            onChange={(event) => dispatch(onInputChange(event))}
+            onChange={(event) => dispatch(onInputChange("list", event))}
           />
         </Typography>
       </CardContent>

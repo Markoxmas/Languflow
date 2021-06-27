@@ -16,6 +16,16 @@ const listsReducer = (state = initialState, action = {}) => {
       ];
     case CONST.DELETE_LIST_SUCCESS:
       return [...state.filter((list) => list.id !== action.list.id)];
+    case CONST.ADD_LEXEMES_SUCCESS:
+    case CONST.EDIT_LEXEMES_SUCCESS:
+    case CONST.DELETE_LEXEMES_SUCCESS:
+      return [
+        ...state.map((list) =>
+          list.id === action.listId
+            ? { ...list, lexemes: action.lexemes }
+            : list
+        ),
+      ];
     default:
       return state;
   }

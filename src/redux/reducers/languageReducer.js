@@ -1,6 +1,6 @@
 const initialState = {
-  foreign: "hungarian",
-  native: "english",
+  foreign: "Hungarian",
+  native: "English",
 };
 
 const languageReducer = (state = initialState, action = {}) => {
