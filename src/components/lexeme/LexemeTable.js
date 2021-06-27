@@ -193,9 +193,7 @@ export default function LexemeTable() {
                           }
                         />
                       </TableCell>
-                      <TableCell align="left">
-                        progress under construction
-                      </TableCell>
+                      <TableCell align="left">Coming soon!</TableCell>
                     </TableRow>
                   ) : (
                     <TableRow
@@ -210,9 +208,7 @@ export default function LexemeTable() {
                       <TableCell padding="checkbox"></TableCell>
                       <TableCell align="left">{row.foreign}</TableCell>
                       <TableCell align="left">{row.native}</TableCell>
-                      <TableCell align="left">
-                        progress under construction
-                      </TableCell>
+                      <TableCell align="left">Coming soon!</TableCell>
                     </TableRow>
                   );
                 })}

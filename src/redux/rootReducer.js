@@ -4,6 +4,7 @@ import listEditReducer from "./reducers/listEditReducer";
 import tableReducer from "./reducers/tableReducer";
 import languageReducer from "./reducers/languageReducer";
 import modalReducer from "./reducers/modalReducer";
+import menuReducer from "./reducers/menuReducer";
 
 const rootReducer = combineReducers({
   listsReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   tableReducer,
   languageReducer,
   modalReducer,
+  menuReducer,
 });
 
 export default rootReducer;
